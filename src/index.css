@@ -1,0 +1,94 @@
+body {
+  font-family: Georgia, serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+#logo-image {
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* Add your own custom styles here */
+
+#navbar {
+  padding: 2em;
+  justify-content: space-evenly;
+}
+
+#container > div {
+  display: flex;
+}
+h1{
+  text-align: center;
+}
+
+.RegisterForm{
+  border-style: solid;
+  text-align: center;
+}
+
+/* Styling for the container that holds the player's image. */
+.book-image-container {
+  /* The image is centered. */
+  margin: auto;
+  justify-content: center;
+   align-items: center;
+   display: block;
+   background-color: aliceblue;
+  /* The image is centered along the horizontal axis. */
+  /* The image is centered along the vertical axis. */
+  height: 50%; /* The height of the image container. */
+  padding: 10px; /* The padding around the image. */
+  }
+
+  /* Styling for the player's image. */
+  .book-image {
+    width: 100%; /* The width of the image. */
+    height: 100%; 
+    object-fit: contain;
+    text-align: center;
+    /* The height of the image. */
+    /* The image will cover the entire area of its container without distorting its aspect ratio. */
+    /* The image is displayed using CSS Grid. */
+    /* The margin to the left of the image. */
+    }
+
+.book-image-singlePage{
+  width: 200px%; /* The width of the image. */
+    height: 200px%; 
+    object-fit: contain;
+    text-align: center;
+}
+
+    .book-details {
+      display: block;
+    flex-direction: column; /* The details are arranged in a column. */
+    align-items: center; /* The details are centered along the vertical axis. */
+    justify-content: center; /* The details are centered along the horizontal axis. */
+    color: #000; /* The color of the details text. */
+    font-size: 16px; /* The size of the details text. */
+    text-align: center; /* The details text is centered. */
+    }
+    .book-card {
+      width: 360px; /* The width of the card. */
+      height: 380px; /* The height of the card. */
+      margin: 10px; /* The margin around the card. */
+      background-color: purple; /* The background color of the card. */
+      border-style: solid; /* The border around the card. */
+      /* The radius of the card's corners. */
+      border-radius: 5px;
+      /* The shadow effect around the card. */
+      box-shadow: 10px 10px;
+      overflow: hidden; /* Any content that goes outside the card will be hidden. */
+      position: relative; /* The card's position is set to relative so it can be moved using the transform property. */
+      transition: transform 0.3s; /* Transition effect for the transform property. */
+      }
+    
+      /* Styling for the container that holds the player cards. */
+  .books {
+    display: flex; /* The player cards are displayed using flexbox. */
+    flex-wrap: wrap; /* The player cards will wrap onto the next line if there is not enough space. */
+    
+    }
