@@ -5,25 +5,43 @@ import { useNavigate } from "react-router-dom";
 const Books = ({ token }) => {
     const navigate = useNavigate();
   const [books, setBooks] = useState([]);
+  
+  async function checkOutBook(bookId) {
+    try {
+      const response = await fetch(
+        `https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books/${bookId}` ,{
+          method: "PATCH",
+          body: JSON.stringify({
+            available: false,
+          }),
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`}
+    });
+      const result = await response.json();
+    } catch (e) {
+//do nothing
+    }
+  }
+
+
+  
+  
   useEffect(() => {
-    console.log("See Me");
     async function getBooks() {
       try {
         const response = await fetch(
           `https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books`
         );
         const result = await response.json();
-        console.log(result.books);
         setBooks(result.books);
-        console.log(books);
       } catch (e) {
-        console.log(e);
+        //Do nothing
       }
     }
     getBooks();
   });
 
-  console.log(token);
   if(token == null){
     return (
         <>
@@ -64,7 +82,9 @@ const Books = ({ token }) => {
               <h2>Name: {book.title} </h2>
               <p>Author {book.author}</p>
               <button onClick={() => navigate(`singlebook/${book.id}`)}>Book Detail</button>
-              <button>Reserve Book</button>
+              {book.available === true? <button onClick={() => checkOutBook(book.id)}>Checkout Book</button>:<p></p>}
+
+              
               
             </div>
           ))}

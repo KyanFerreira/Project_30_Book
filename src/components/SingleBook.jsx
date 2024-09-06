@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 const SingleBook = () => {
   let { id } = useParams();
   const [book, setBook] = useState({});
-  console.log(id);
 
   useEffect(() => {
     async function getBook() {
@@ -14,11 +13,9 @@ const SingleBook = () => {
           `https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books/${id}`
         );
         const result = await response.json();
-        console.log(result);
         setBook(result.book);
-        console.log(book.author);
       } catch (e) {
-        console.log(e);
+        //Do nothing
       }
     }
 

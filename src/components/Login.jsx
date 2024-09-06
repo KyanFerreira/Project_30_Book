@@ -1,15 +1,11 @@
 /* TODO - add your code to create a functional React component that renders a login form */
-import { useEffect, useState } from "react";
 
 const Login = ({setToken}) => {
-  const [loggedIn, setLoggedIn] = useState(null)
 
     async function loginUser() {
     let emailValue = document.getElementById("email").value;
     let passwordValue = document.getElementById("password").value;
-    
-    console.log(emailValue);
-    console.log(passwordValue);
+
     
     try{
         const response = await fetch(
@@ -27,13 +23,12 @@ const Login = ({setToken}) => {
           );
           const result = await response.json();
           
-          console.log(result);
-          console.log(result.token);
+
           setToken(result.token);
-          consoleLog(token);
+
 
     }catch(e){
-        console.log(e);
+        //Do nothing
     }
   }
   return (

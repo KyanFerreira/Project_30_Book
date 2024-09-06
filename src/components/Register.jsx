@@ -9,10 +9,7 @@ const Register = ({setToken}) => {
     let lastName = document.getElementById("lastname").value;
     let emailValue = document.getElementById("email").value;
     let passwordValue = document.getElementById("password").value;
-    /*console.log(firstName);
-    console.log(lastName);
-    console.log(email);
-    console.log(password);*/
+  
 
     try {
       const response = await fetch(
@@ -31,11 +28,9 @@ const Register = ({setToken}) => {
         }
       );
       const result = await response.json();
-      console.log(result);
-      console.log(result.token);
       setToken(result.token);
     } catch (e) {
-      console.log(e);
+      //Do nothing
     }
   }
 
